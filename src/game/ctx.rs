@@ -8,6 +8,7 @@ use ecs::*;
 use util::{LeakyReserver, Schedule};
 use coord::Coord;
 use direction::Direction;
+use serde::{Serialize, Deserialize};
 
 pub struct EntityIdReserver(RefCell<LeakyReserver<EntityId>>);
 

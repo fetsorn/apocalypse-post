@@ -25,7 +25,7 @@ pub fn read_string<P: AsRef<path::Path>>(path: P) -> FileResult<String> {
     Ok(string)
 }
 
-pub fn read_toml<P: AsRef<path::Path>, T: Deserialize>(path: P) -> FileResult<T> {
+pub fn read_toml<P: AsRef<path::Path>, T: for<'de> serde::Deserialize<'de>>(path: P) -> FileResult<T> {
     let s = read_string(path)?;
     toml::from_str(&s).map_err(|_| FileError::InvalidFormat)
 }

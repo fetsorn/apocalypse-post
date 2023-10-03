@@ -1,8 +1,10 @@
 *.swp
-Cargo.lock
+# Cargo.lock
 target
 *.bk
 
 # Generated source files
 src/ecs/generated.rs
 src/spatial_hash/generated.rs
+*.DS_Store
+/result
